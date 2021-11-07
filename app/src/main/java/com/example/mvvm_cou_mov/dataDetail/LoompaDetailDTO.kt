@@ -2,7 +2,7 @@ package com.example.mvvm_cou_mov.dataDetail
 
 import com.google.gson.annotations.SerializedName
 
-data class LoompaDetail(
+data class LoompaDetailDTO(
     @SerializedName("age")
     val age: Int,
     @SerializedName("country")

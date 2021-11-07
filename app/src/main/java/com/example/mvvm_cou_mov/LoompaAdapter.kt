@@ -9,7 +9,7 @@ import com.example.mvvm_cou_mov.data.ListResultDTO
 import com.example.mvvm_cou_mov.data.ResultDTO
 import com.example.mvvm_cou_mov.databinding.AdapterMovieBinding
 
-class MovieAdapter (private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<MainViewHolder>() {
+class LoompaAdapter (private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<MainViewHolder>() {
 
         var movieList = mutableListOf<ResultDTO>()
 

@@ -1,10 +1,7 @@
 package com.example.mvvm_cou_mov
 
 import com.example.mvvm_cou_mov.data.ListResultDTO
-import com.example.mvvm_cou_mov.data.Loompa
-import com.example.mvvm_cou_mov.data.ResultDTO
-import com.example.mvvm_cou_mov.dataDetail.LoompaDetail
-import retrofit2.Call
+import com.example.mvvm_cou_mov.dataDetail.LoompaDetailDTO
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,11 +18,12 @@ interface RetrofitService {
     @GET("oompa-loompas/{currentId}")
     suspend fun getDetailLoompabyID(
         @Path("currentId") number: Int
-    ): Response<LoompaDetail>
+    ): Response<LoompaDetailDTO>
+
 
     companion object {
         var retrofitService: RetrofitService? = null
-        fun getInstance() : RetrofitService {
+        fun getInstance() : RetrofitService? {
             if (retrofitService == null) {
                 val retrofit = Retrofit.Builder()
                     .baseUrl("https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/")
@@ -33,7 +31,7 @@ interface RetrofitService {
                     .build()
                 retrofitService = retrofit.create(RetrofitService::class.java)
             }
-            return retrofitService!!
+            return retrofitService
         }
 
     }
