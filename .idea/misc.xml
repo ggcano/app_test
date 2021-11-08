@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/activity_detail.xml" value="0.22" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/drawable/buttonstyle.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/drawable/circle.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/drawable/gradientbackground.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/drawable/ic_baseline_contact_phone_24.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/activity_detail.xml" value="0.67" />
         <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/adapter_movie.xml" value="0.5" />
-        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/item_loompa.xml" value="0.5" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/content_profile.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/cano/Desktop/mvvm_cou_mov-master/app/src/main/res/layout/item_loompa.xml" value="0.75" />
       </map>
     </option>
   </component>

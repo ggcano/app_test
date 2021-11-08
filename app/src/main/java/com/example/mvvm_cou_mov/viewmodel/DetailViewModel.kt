@@ -10,12 +10,12 @@ import retrofit2.Response
 
 class DetailViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
 
-    var responseDetailLoompa: MutableLiveData<Response<LoompaDetailDTO>> = MutableLiveData()
+    var responseDetailLoompaMLD: MutableLiveData<Response<LoompaDetailDTO>> = MutableLiveData()
 
     fun getLoompaDetail(id: Int){
         viewModelScope.launch {
             val response= mainRepository.getLoompaID(id)
-            responseDetailLoompa.value = response
+            responseDetailLoompaMLD.value = response
         }
     }
 }

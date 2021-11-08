@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Entry level test</string>
+    <string name="write_number">Escribe el número de la página que deseas buscar</string>
+    <string name="error_main_activity">Error in response from retrofit in MainActivity</string>
+    <string name="error_detail">Error in response from retrofit in DetailActivity</string>
+    <string name="search">Buscar</string>
 </resources>

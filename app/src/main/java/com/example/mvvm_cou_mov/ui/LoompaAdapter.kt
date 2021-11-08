@@ -7,15 +7,20 @@ import com.bumptech.glide.Glide
 import com.example.mvvm_cou_mov.dataMain.ListResultDTO
 import com.example.mvvm_cou_mov.dataMain.ResultDTO
 import com.example.mvvm_cou_mov.databinding.ItemLoompaBinding
+import okhttp3.internal.notify
 
 
 class LoompaAdapter (private val onItemClicked: (position: Int) -> Unit): RecyclerView.Adapter<MainViewHolder>() {
 
         var oompaLoompaList = mutableListOf<ResultDTO>()
 
-        fun setMovies(movies: ListResultDTO?) {
-            this.oompaLoompaList = movies!!.listLoompa.toMutableList()
+        fun setLoompaList(list: ListResultDTO?) {
+            if (list!= null){
+                this.oompaLoompaList = list.listLoompa.toMutableList()
             notifyDataSetChanged()
+            }
+
+
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {

@@ -37,11 +37,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadRecyclerView() {
         binding.button.setOnClickListener {
-            if (binding.editTextPhone.text.trim().isNotEmpty()) {
-                val number: String = binding.editTextPhone.text.toString()
+            if (binding.txtNumber.text.trim().isNotEmpty()) {
+                val number: String = binding.txtNumber.text.toString()
                 viewModel.getCustomPost(Integer.parseInt(number))
                 viewModel.responseListMLD.observe(this, Observer { response ->
-                    adapterLoompa.setMovies(response.body())
+                    if (response.isSuccessful) {
+                        adapterLoompa.setLoompaList(response.body())
+                    }else{
+                        println(getString(R.string.error_main_activity))
+                    }
                 })
             }
         }

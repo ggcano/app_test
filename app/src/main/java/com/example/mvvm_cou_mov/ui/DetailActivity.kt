@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.mvvm_cou_mov.*
 import com.example.mvvm_cou_mov.databinding.ActivityDetailBinding
@@ -30,17 +29,26 @@ class DetailActivity : AppCompatActivity() {
         viewModel =
             ViewModelProvider(this, MyViewModelFactory(mainRepository))[DetailViewModel::class.java]
         getInfoLoompaDetail()
-        viewModel.responseDetailLoompa.observe(this, Observer { response ->
+        setupText()
+    }
+
+    private fun setupText() {
+        viewModel.responseDetailLoompaMLD.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 binding.txtEmail.text = response.body()?.email
-                binding.txtAge.text = response.body()?.age.toString()
-                binding.txtName.text = response.body()?.first_name
-                binding.textView.text = response.body()?.favorite?.food
+                binding.txtAge.text = "${response.body()?.age.toString()} Años"
+                binding.txtEmail.text = response.body()?.email
+                binding.txtName.text =
+                    "${response.body()?.first_name} ${response.body()?.last_name}"
+                binding.txtDescription.text = response.body()?.description
+                binding.txtFavoriteFood.text = response.body()?.favorite?.food
                 Glide.with(this).load(response.body()?.image)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .apply(RequestOptions.circleCropTransform())
                     .into(binding.imageLoompa)
+            } else {
+                println(getString(R.string.error_detail))
             }
         })
     }
@@ -61,6 +69,7 @@ class DetailActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
@@ -70,5 +79,7 @@ class DetailActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 }
