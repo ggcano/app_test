@@ -5,11 +5,11 @@ import java.io.Serializable
 
 data class Favorite(
     @SerializedName("color")
-    val color: String,
+    val color: String?=null,
     @SerializedName("food")
-    val food: String,
+    val food: String?=null,
     @SerializedName("random_string")
-    val random_string: String,
+    val random_string: String?=null,
     @SerializedName("song")
-    val song: String
+    val song: String?=null
 ):Serializable

@@ -37,7 +37,7 @@ class LoompaAdapter (private val onItemClicked: (position: Int) -> Unit): Recycl
             Glide.with(holder.itemView.context).load(loompa.image).into(holder.binding.imageview)
             holder.itemView.setOnClickListener {
                 val id = loompa.id
-                onItemClicked(id)
+                id?.let { view -> onItemClicked(view) }
             }
         }
 
