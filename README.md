@@ -1,4 +1,4 @@
-# app_test - Entry level test by Adrian Cano Gálvez
+# app_test - Entry level test by Adrián Cano Gálvez
 
 
 External Libraries:
