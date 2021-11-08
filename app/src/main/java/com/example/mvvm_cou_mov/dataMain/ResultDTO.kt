@@ -1,4 +1,4 @@
-package com.example.mvvm_cou_mov.data
+package com.example.mvvm_cou_mov.dataMain
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

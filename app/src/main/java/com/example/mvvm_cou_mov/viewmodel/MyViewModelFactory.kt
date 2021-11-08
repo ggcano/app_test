@@ -1,7 +1,8 @@
-package com.example.mvvm_cou_mov
+package com.example.mvvm_cou_mov.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mvvm_cou_mov.repository.MainRepository
 
 class MyViewModelFactory constructor(private val repository: MainRepository): ViewModelProvider.Factory {
 

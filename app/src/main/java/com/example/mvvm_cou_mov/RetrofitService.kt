@@ -1,6 +1,6 @@
 package com.example.mvvm_cou_mov
 
-import com.example.mvvm_cou_mov.data.ListResultDTO
+import com.example.mvvm_cou_mov.dataMain.ListResultDTO
 import com.example.mvvm_cou_mov.dataDetail.LoompaDetailDTO
 import retrofit2.Response
 import retrofit2.Retrofit

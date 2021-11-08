@@ -1,6 +1,7 @@
-package com.example.mvvm_cou_mov
+package com.example.mvvm_cou_mov.repository
 
-import com.example.mvvm_cou_mov.data.ListResultDTO
+import com.example.mvvm_cou_mov.RetrofitService
+import com.example.mvvm_cou_mov.dataMain.ListResultDTO
 import com.example.mvvm_cou_mov.dataDetail.LoompaDetailDTO
 import retrofit2.Response
 

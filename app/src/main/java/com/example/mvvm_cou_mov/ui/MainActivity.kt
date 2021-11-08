@@ -1,13 +1,20 @@
-package com.example.mvvm_cou_mov
+package com.example.mvvm_cou_mov.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.viewbinding.library.activity.viewBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mvvm_cou_mov.*
 import com.example.mvvm_cou_mov.databinding.ActivityMainBinding
+import com.example.mvvm_cou_mov.repository.MainRepository
+import com.example.mvvm_cou_mov.viewmodel.MainViewModel
+import com.example.mvvm_cou_mov.viewmodel.MyViewModelFactory
 
 const val EXTRA_MESSAGE = "current_id"
 
@@ -30,11 +37,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadRecyclerView() {
         binding.button.setOnClickListener {
-            val number: String = binding.editTextPhone.text.toString()
-            viewModel.getCustomPost(Integer.parseInt(number))
-            viewModel.responseListMLD.observe(this, Observer { response ->
-                adapterLoompa.setMovies(response.body())
-            })
+            if (binding.editTextPhone.text.trim().isNotEmpty()) {
+                val number: String = binding.editTextPhone.text.toString()
+                viewModel.getCustomPost(Integer.parseInt(number))
+                viewModel.responseListMLD.observe(this, Observer { response ->
+                    adapterLoompa.setMovies(response.body())
+                })
+            }
         }
     }
 
@@ -51,4 +60,13 @@ class MainActivity : AppCompatActivity() {
             adapter = adapterLoompa
         }
     }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
 }
